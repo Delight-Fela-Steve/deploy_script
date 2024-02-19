@@ -36,6 +36,6 @@ jobs:
 
       - name: Deploy the build
         run: |
-          ls ..
+          ls
           # cp ../build.sh
           # bash ../build.sh
