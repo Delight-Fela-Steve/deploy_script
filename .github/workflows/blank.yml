@@ -24,10 +24,22 @@ jobs:
       - name: Copy the build file
         run: |
           cp build.sh ../build.sh
+          echo "present working directory""
           pwd
+          echo "parent directory""
+          ls ..
+          echo "current directory"
+          ls
+
+      - uses: actions/checkout@v3
 
       - name: Deploy the build
         run: |
+          echo "present working directory""
+          pwd
+          echo "parent directory""
+          ls ..
+          echo "current directory"
           ls
   # deploy:
   #   needs: build
