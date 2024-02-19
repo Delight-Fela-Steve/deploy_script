@@ -24,7 +24,8 @@ jobs:
       - name: Copy the build file
         run: |
           ls
-          cp build.sh ../
+          cp build.sh ../build.sh
+          cd ..
 
   deploy:
     needs: build
@@ -36,4 +37,5 @@ jobs:
       - name: Deploy the build
         run: |
           ls
+          cd ..
           bash ../build.sh
