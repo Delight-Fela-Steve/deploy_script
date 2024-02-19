@@ -24,9 +24,9 @@ jobs:
       - name: Copy the build file
         run: |
           cp build.sh ../build.sh
-          echo "present working directory""
+          echo "present working directory"
           pwd
-          echo "parent directory""
+          echo "parent directory"
           ls ..
           echo "current directory"
           ls
@@ -35,9 +35,9 @@ jobs:
 
       - name: Deploy the build
         run: |
-          echo "present working directory""
+          echo "present working directory"
           pwd
-          echo "parent directory""
+          echo "parent directory"
           ls ..
           echo "current directory"
           ls
