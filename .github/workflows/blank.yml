@@ -31,7 +31,8 @@ jobs:
         run: |
           echo "current directory"
           cp ../build.sh .
-          ls
+          bash build.sh
+          bash deploy.sh
   # deploy:
   #   needs: build
   #   runs-on: ubuntu-latest
