@@ -24,7 +24,7 @@ jobs:
       - name: Copy the build file
         run: |
           cp build.sh ../build.sh
-          ls
+          pwd
 
       - name: Deploy the build
         run: |
