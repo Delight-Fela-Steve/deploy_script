@@ -2,7 +2,7 @@
 echo 'deploying postgres image..............'
 
 echo "checking the present working directory............"
-$PWD
+$GITHUB_WORKSPACE
 
 
 echo "checking the script present working directory............."
