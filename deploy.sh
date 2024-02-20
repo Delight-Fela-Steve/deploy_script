@@ -7,4 +7,4 @@ $GITHUB_WORKSPACE
 
 echo "checking the script present working directory............."
 nano "created a file called something.txt" something.txt
-${pwd}/"something.txt"
+pwd/"something.txt"
