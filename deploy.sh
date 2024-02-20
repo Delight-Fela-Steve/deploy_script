@@ -2,5 +2,5 @@
 echo 'deploying postgres image..............'
 
 echo "checking the present working directory............"
-echo "$GITHUB_WORKSPACE/something.txt"
+cat "created a something.txt file" > something.txt
 cat "$GITHUB_WORKSPACE/something.txt"
