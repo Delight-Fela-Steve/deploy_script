@@ -6,4 +6,4 @@ $GITHUB_WORKSPACE
 
 
 echo "checking the script present working directory............."
-pwd
+${pwd}/"something"
