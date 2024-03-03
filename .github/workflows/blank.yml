@@ -9,8 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  GITHUB_WORKSPACE: ${{github.workspace}}
-  BUILD_DATE: ${{ github.actions.getWorkflowRunId }}-${{ github.run_started_at }} # Format for YYYY-MM-DD
+  GITHUB_WORKSPACE: ${{github.workspace}} # Format for YYYY-MM-DD
   BUILD_NUMBER: ${{ github.run_number }}
   GIT_COMMIT: ${{ github.sha }}
   GIT_BRANCH: ${{ github.ref_name}} # Remove everything before the last slash (/)
@@ -28,6 +27,9 @@ jobs:
           ref: main
           fetch-depth: 1
 
+      - name: Set Release Date
+        run: |
+          echo "BUILD_DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_ENV
       - name: Check the environment variables
         run: |
           echo "BUILD_DATE: $BUILD_DATE"
