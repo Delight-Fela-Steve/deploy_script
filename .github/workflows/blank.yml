@@ -13,7 +13,7 @@ env:
   BUILD_DATE: ${{ github.actions.getWorkflowRunId }}-${{ github.run_started_at }} # Format for YYYY-MM-DD
   BUILD_NUMBER: ${{ github.actions.getWorkflowRunId }}
   GIT_COMMIT: ${{ github.sha }}
-  GIT_BRANCH: ${{ github.ref ## *}}  # Remove everything before the last slash (/)
+  GIT_BRANCH: ${{ github.branch}} # Remove everything before the last slash (/)
   JOB_NAME: ${{ github.job }}
   PUSH_IMAGE: ${{ inputs.PUSH_IMAGE || 'false' }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
