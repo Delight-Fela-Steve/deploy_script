@@ -10,6 +10,12 @@ on:
 
 env:
   PWD: ${{github.workspace}}
+  BUILD_DATE: ${{ github.actions.getWorkflowRunId }}-${{ github.run_started_at }} # Format for YYYY-MM-DD
+  BUILD_NUMBER: ${{ github.actions.getWorkflowRunId }}
+  GIT_COMMIT: ${{ github.sha }}
+  GIT_BRANCH: ${{ github.ref ## *}}  # Remove everything before the last slash (/)
+  JOB_NAME: ${{ github.job }}
+  PUSH_IMAGE: ${{ inputs.PUSH_IMAGE || 'false' }}
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   deploy:
@@ -22,6 +28,14 @@ jobs:
           ref: main
           fetch-depth: 1
 
+      - name: Check the environment variables
+        run: |
+          echo "BUILD_DATE: $BUILD_DATE"
+          echo "BUILD_NUMBER: $BUILD_NUMBER"
+          echo "GIT_COMMIT: $GIT_COMMIT"
+          echo "GIT_BRANCH: $GIT_BRANCH"
+          echo "JOB_NAME: $JOB_NAME"
+          echo "PUSH_IMAGE: $PUSH_IMAGE"
       # Runs a set of commands using the runners shell
       - name: Copy the build file
         run: |
