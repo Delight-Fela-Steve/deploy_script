@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  PWD: ${{github.workspace}}
+  GITHUB_WORKSPACE: ${{github.workspace}}
   BUILD_DATE: ${{ github.actions.getWorkflowRunId }}-${{ github.run_started_at }} # Format for YYYY-MM-DD
   BUILD_NUMBER: ${{ github.actions.getWorkflowRunId }}
   GIT_COMMIT: ${{ github.sha }}
